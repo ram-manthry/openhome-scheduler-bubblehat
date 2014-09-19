@@ -5,7 +5,7 @@ var express = require('express'),
     session = require('express-session'),
     oa_controller = require('./middlewares/oauth'),
 	watchlist = require('./middlewares/watchlist'),
-    openhome = require('./middlewares/openhome');
+    openhome = require('./middlewares/openhomewatchlist');
 
 var app = express();
 
