@@ -6,6 +6,9 @@
 *.user
 *.sln.docstates
 
+.idea
+config.json
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -181,3 +184,5 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+config.example.json
