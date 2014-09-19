@@ -19,6 +19,7 @@ url = 'https://api.' + req.app.set('api domain') + '/v1/MyTradeMe/Watchlist/Open
 		json: true
 	}, function(e, r, result) {
 		req.trademe.watchlist = result;
+		console.log(result);
 		next();
 	});
 };
