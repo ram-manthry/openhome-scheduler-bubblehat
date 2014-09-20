@@ -1,7 +1,9 @@
-var OpenHome = function () {};
-
-Qux.prototype.log = function () {
-    console.log('baz!');
+var OpenHome = function (suburb, startTime, endTime) {
+	var o = {};
+	o.suburb = suburb;
+	o.startTime = startTime;
+	o.endTime = endTime;
+	return o;
 };
 
-exports.OpenHomeBuilder = OpenHome;
+modules.exports = OpenHome;
