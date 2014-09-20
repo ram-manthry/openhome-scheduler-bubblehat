@@ -2,6 +2,7 @@ var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
 var x = document.getElementById("msg");
+var initialLocation;
 
 function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -16,6 +17,7 @@ function initialize() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
             initialLocation = position.coords.latitude+","+position.coords.longitude;
+
             //map.setCenter(initialLocation);
             console.log(initialLocation);
     }, showError);
@@ -48,14 +50,16 @@ function showError(error) {
 
 function calcRoute() {
 
-    var end = document.getElementById('end').value; //replace this with clicked property location
-
+   /* initialize();*/
+    var end = $("#geolocation").html(); //replace this with clicked property location
+console.log(end);
+//var end = document.getElementById('end').value;
     var request = {
         origin:initialLocation,
         destination:end,
         travelMode: google.maps.TravelMode.DRIVING
     };
-    
+
     directionsService.route(request, function(response, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
@@ -64,6 +68,11 @@ function calcRoute() {
 }
 
 
+$("#location").click(function(){
+
+
+    calcRoute();
+})
 
 
 /*
