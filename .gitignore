@@ -7,6 +7,7 @@
 *.sln.docstates
 
 .idea
+.idea/workspace.xml
 
 # Build results
 [Dd]ebug/
