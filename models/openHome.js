@@ -1,10 +1,8 @@
-var OpenHome = function (title, location, startTime, endTime) {
-	
+var OpenHome = function (title, location, visitTimeList) {
 	var o = {};
     o.title = title;
 	o.location = location;
-	o.startTime = startTime;
-	o.endTime = endTime;
+	o.visitTimeList = visitTimeList;
 	return o;
 };
 
