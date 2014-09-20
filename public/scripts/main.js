@@ -12,20 +12,22 @@ function initialize() {
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     directionsDisplay.setMap(map);
-}
 
-function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(calcRouteMyLocation, showError);
+        navigator.geolocation.getCurrentPosition(function(position) {
+            initialLocation = position.coords.latitude+","+position.coords.longitude;
+            //map.setCenter(initialLocation);
+            console.log(initialLocation);
+    }, showError);
     } else { 
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;  
-}
+
+//if geolocation exists, save current position as initialLocation DONE
+//on click of location, run function calcRoute 
+//calcRoute calculates the start (initialLocation) DONE and the end (location thats been clicked)
 
 function showError(error) {
     switch(error.code) {
@@ -44,26 +46,30 @@ function showError(error) {
     }
 }
 
-function calcRouteMyLocation(position) {
-    var start = position.coords.latitude+","+position.coords.longitude;
-    var end = document.getElementById('end').value;
-
-    var request = {
-        origin:start,
-        destination:end,
-        travelMode: google.maps.TravelMode.DRIVING
-    };
-    
-    directionsService.route(request, function(response, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(response);
-        }
-    });
-}
-
 function calcRoute() {
-    var start = document.getElementById('start').value;
-    var end = document.getElementById('end').value;
+
+    var end = document.getElementById('end').value; //replace this with clicked property location
+
+    var request = {
+        origin:initialLocation,
+        destination:end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    
+    directionsService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+        }
+    });
+}
+
+
+
+
+/*
+function calcRoute() {
+    var start = document.getElementById('start').value; //needs to be value of start above, accessing that var?
+    var end = document.getElementById('end').value; //
 
     var request = {
         origin:start,
@@ -76,7 +82,7 @@ function calcRoute() {
             directionsDisplay.setDirections(response);
         }
     });
-}
+}*/
 
 google.maps.event.addDomListener(window, 'load', initialize);
 

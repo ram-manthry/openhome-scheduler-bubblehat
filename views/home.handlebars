@@ -1,5 +1,4 @@
-
-    <!--<h1>Open Home Schedule</h1>!-->
+ <!--<h1>Open Home Schedule</h1>!-->
     <div id="wrapper">
         <div id="sidebar-wrapper">
 
@@ -36,6 +35,12 @@
 
                 {{#each watchlist}}
                     <li class="sidebar-brand">{{title}}</li>
+                    <li class="sidebar-brand" id="location">{{location}}</li>
+
+                    {{#each visitTimeList}}
+                    <li class="sidebar-brand">{{startTime}}</li>
+                    {{/each}}
+
                 {{/each}}
             </ul>
 
@@ -47,6 +52,3 @@
             <div id="map-canvas"></div>
         </div>
     </div>
-
-
-
