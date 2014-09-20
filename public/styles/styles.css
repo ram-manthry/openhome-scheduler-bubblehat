@@ -70,5 +70,13 @@ button:focus {
 
 }
 
+.PropertyListItem {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: rgba(0,0,0,0.5);
+}
 
+.PropertyListItem:hover {
+    background-color: #000000;
+}
 

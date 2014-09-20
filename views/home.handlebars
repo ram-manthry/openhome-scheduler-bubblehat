@@ -14,6 +14,7 @@
                 
                 <p id="msg"></p>
                 {{#each watchlist}}
+                    <div class = "PropertyListItem">
                     <li class="sidebar-brand">{{title}}</li>
                     <li class="sidebar-brand" id="location">{{location}}
                     <span style="display:none;" id="geolocation">{{geolocation}}</span>
@@ -22,7 +23,7 @@
                     {{#each visitTimeList}}
                     <li class="sidebar-brand">{{startTime}}</li>
                     {{/each}}
-
+                    </div>
                 {{/each}}
             </ul>
 
