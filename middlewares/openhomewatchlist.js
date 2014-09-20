@@ -18,8 +18,14 @@ url = 'https://api.' + req.app.set('api domain') + '/v1/MyTradeMe/Watchlist/Open
 		oauth: oauth,
 		json: true
 	}, function(e, r, result) {
-		req.trademe.watchlist = result;
-		console.log(result);
-		next();
+		//console.log(result.List[0]);
+
+        var watchListItems = result.List;
+
+        var OpenHomeBuilder = require('../controller/openHomesBuilder.js');
+        var openHomes = OpenHomeBuilder.getOpenHomes(watchListItems);
+
+        req.trademe.watchlist = openHomes;
+        next();
 	});
 };

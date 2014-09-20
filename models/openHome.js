@@ -1,9 +1,10 @@
-var OpenHome = function (suburb, startTime, endTime) {
+var OpenHome = function (title, location, visitTimeList) {
 	var o = {};
-	o.suburb = suburb;
-	o.startTime = startTime;
-	o.endTime = endTime;
+    o.title = title;
+	o.location = location;
+	o.visitTimeList = visitTimeList;
 	return o;
 };
 
-modules.exports = OpenHome;
+module.exports = OpenHome;
+
