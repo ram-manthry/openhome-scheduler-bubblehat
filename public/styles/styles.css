@@ -1,4 +1,19 @@
-body {
-	background-color: white;
-    color: black;
+.Location{
+    font-size: 15px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.Time{
+    font-size: 13px;
+    color: #012695;
+
+;
+}
+
+.sidebar-brand{
+    font-weight: bold;
+
 }
