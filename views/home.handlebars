@@ -1,5 +1,4 @@
-
-    <!--<h1>Open Home Schedule</h1>!-->
+<!--<h1>Open Home Schedule</h1>!-->
     <div id="wrapper">
         <div id="sidebar-wrapper">
 
@@ -22,35 +21,21 @@
                     <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
                 </select>
 
-
-
                 <p id="msg"></p>
 
             </div>
-
-
             <ul class="sidebar-nav">
-
-
-
-
-
-
-
-
-
-
-
                 {{#each watchlist}}
-                    <li class="sidebar-brand">{{title}}  {{/each}}
 
+                    <li class="sidebar-brand">{{title}} <br>
+                        <span class="Location">{{location}}</span> <br>
 
-                <br>
-                <span class="Location">Mt.Eden, Auckland</span> <br>
-                <span class="Time">1:00PM-3:00PM Sat 6 August</span>
-                </li>
+                    {{#each visitTimeList}}
+                            <span class="Time">{{startTime}}</span>
+                    </li>
+                    {{/each}}
 
-
+                {{/each}}
 
             </ul>
 
@@ -63,6 +48,3 @@
             <div id="map-canvas"></div>
         </div>
     </div>
-
-
-
