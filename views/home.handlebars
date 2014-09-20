@@ -14,14 +14,15 @@
                 
                 <p id="msg"></p>
                 {{#each watchlist}}
-                    <li class="sidebar-brand">{{title}}</li>
-                    <li class="sidebar-brand" id="location">{{location}}
-                    <span style="display:none;" id="geolocation">{{geolocation}}</span>
-                    </li>
+                    <li class="sidebar-brand">{{title}}<br>
+                    <span class="sidebar-brand Location" id="location">{{location}}</span><br>
+                    <span style="display:none;" id="geolocation">{{geolocation}}</span><br>
+                    
 
                     {{#each visitTimeList}}
-                    <li class="sidebar-brand">{{startTime}}</li>
+                    <span class="sidebar-brand Time">{{startTime}}</span>
                     {{/each}}
+                </li>
 
                 {{/each}}
             </ul>
