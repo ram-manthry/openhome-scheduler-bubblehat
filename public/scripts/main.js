@@ -64,6 +64,8 @@ function calcRoute() {
 }
 
 
+
+
 /*
 function calcRoute() {
     var start = document.getElementById('start').value; //needs to be value of start above, accessing that var?
