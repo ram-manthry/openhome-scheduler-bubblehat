@@ -23,7 +23,6 @@
         }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    
 </head>
 <body>
 <div id="panel">
@@ -33,7 +32,9 @@
         <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
         <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
     </select>
+
     <b>or </b> <button onclick="getLocation();">Use My Location</button><br><br>
+
     <b>End: </b>
     <select id="end" onchange="calcRoute();">
         <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
@@ -66,6 +67,7 @@
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(calcRouteMyLocation, showError);
+
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
             }
@@ -110,9 +112,12 @@
             });
         }
 
+
         function calcRoute() {
             var start = document.getElementById('start').value;
             var end = document.getElementById('end').value;
+
+            console.log(start);
 
             var request = {
                 origin:start,
@@ -132,5 +137,6 @@
 
 
     </script>
+
 </body>
 </html>

@@ -3,14 +3,32 @@
     <head>
         <meta charset="utf-8">
         <title>Open home schedule</title>
+        <!-- Custom CSS -->
+        <link href="/styles/simple-sidebar.css" rel="stylesheet">
         <link rel="stylesheet" href="/styles/bootstrap.min.css">
-        <link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/styles/styles.css">
+        <!--<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">!-->
+        <!--<link rel="stylesheet" href="/styles/styles.css"> !-->
+
     </head>
     <body>
+    <!--<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Open Home Schedule</a>
+        </div>
+    </div> !-->
 
         {{{body}}}
 
+
     <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/jquery-1.11.0.js"></script>
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+
     </body>
 </html>
