@@ -23,10 +23,43 @@
         }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
+    
+</head>
+<body>
+<div id="panel">
+    <b>Start: </b>
+    <select id="start" onchange="calcRoute();">
+        <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
+        <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
+        <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
+    </select>
+<<<<<<< HEAD
+    <b>or </b> <button onclick="getLocation();">Use My Location</button><br><br>
+=======
+    <b>Or </b> <button onclick="getLocation();">Get My Location</button>
+>>>>>>> FETCH_HEAD
+
+    <b>End: </b>
+    <select id="end" onchange="calcRoute();">
+        <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
+        <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
+        <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
+    </select>
+
+<<<<<<< HEAD
+    <p id="msg"></p>
+=======
+    <p id="msg">Click the button to get your coordinates:</p>
+>>>>>>> FETCH_HEAD
+
+</div>
+<div id="map-canvas"></div>
+
+<script>
         var directionsDisplay;
         var directionsService = new google.maps.DirectionsService();
         var map;
+        var x = document.getElementById("msg");
 
         function initialize() {
             directionsDisplay = new google.maps.DirectionsRenderer();
@@ -39,14 +72,81 @@
             directionsDisplay.setMap(map);
         }
 
-        function calcRoute() {
-            var start = document.getElementById('start').value;
+<<<<<<< HEAD
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(calcRouteMyLocation, showError);
+=======
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+>>>>>>> FETCH_HEAD
+            } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+        
+<<<<<<< HEAD
+=======
+        function showPosition(position) {
+            x.innerHTML="Latitude: " + position.coords.latitude + 
+            "<br>Longitude: " + position.coords.longitude;  
+        }
+        
+>>>>>>> FETCH_HEAD
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+        
+<<<<<<< HEAD
+        function calcRouteMyLocation(position) {
+            var start = position.coords.latitude+","+position.coords.longitude;
             var end = document.getElementById('end').value;
+
             var request = {
                 origin:start,
                 destination:end,
                 travelMode: google.maps.TravelMode.DRIVING
             };
+            
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }
+
+
+=======
+>>>>>>> FETCH_HEAD
+        function calcRoute() {
+            var start = document.getElementById('start').value;
+            var end = document.getElementById('end').value;
+
+<<<<<<< HEAD
+=======
+            console.log(start);
+>>>>>>> FETCH_HEAD
+            var request = {
+                origin:start,
+                destination:end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            
             directionsService.route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);
@@ -56,24 +156,8 @@
 
         google.maps.event.addDomListener(window, 'load', initialize);
 
-    </script>
-</head>
-<body>
-<div id="panel">
-    <b>Start: </b>
-    <select id="start" onchange="calcRoute();">
-        <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
-        <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
-        <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
 
-    </select>
-    <b>End: </b>
-    <select id="end" onchange="calcRoute();">
-        <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
-        <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
-        <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
-    </select>
-</div>
-<div id="map-canvas">test</div>
+
+    </script>
 </body>
 </html>
