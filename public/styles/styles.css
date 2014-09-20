@@ -53,7 +53,7 @@ button:focus {
 
 
 .Location{
-    font-size: 14px;
+    font-size: 13px;
     color: #ffffff;
     text-transform: uppercase;
 
@@ -67,6 +67,13 @@ button:focus {
 
 .sidebar-brand{
     font-weight: bold;
+
+}
+
+.listTitle{
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 18px;
 
 }
 

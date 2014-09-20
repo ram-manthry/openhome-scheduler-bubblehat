@@ -4,25 +4,18 @@
 
             <img src="img/trademe_logo.png" alt="TradeMe Open Home Scheduler" class="logo">
 
-            
-
-                
-
-
-
             <ul class="sidebar-nav">
                 
                 <p id="msg"></p>
                 {{#each watchlist}}
-                    <li class="sidebar-brand">{{title}}</li>
-                    <li class="sidebar-brand" id="location">{{location}}
+                    <li class="sidebar-brand"><span class="listTitle">{{title}}</span><br>
+                    <span class="sidebar-brand" id="location">{{location}}</span><br>
                     <span style="display:none;" id="geolocation">{{geolocation}}</span>
-                    </li>
 
                     {{#each visitTimeList}}
-                    <li class="sidebar-brand">{{startTime}}</li>
+                    <span class="sidebar-brand Time">{{startTime}}</span>
                     {{/each}}
-
+                    </li>
                 {{/each}}
             </ul>
 
