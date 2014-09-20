@@ -79,3 +79,21 @@ function calcRoute() {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    $("#menu-toggle").click(function(){
+
+        var width = $("#sidebar-wrapper").css('width');
+        if(width == '250px') {
+            
+            $("#menu-toggle").animate({left: '0px'}, 400);
+
+        }
+        else {
+            $("#menu-toggle").animate({left: '250px'}, 400);
+        }
+    })
+
+
+
+

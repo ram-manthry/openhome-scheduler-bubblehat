@@ -88,12 +88,12 @@ describe("Retrieve Open Homes", function() {
            openHome.location.should.be.exactly("29 Cormack Street, Mount Roskill, Auckland City, Auckland");
        })
 
-       it("Check start time", function() {
-           openHome.startTime.should.be.exactly("/Date(1411432200000+1200)/");
+       it("Check time", function() {
+           openHome.visitTimeList[0].startTime.should.be.exactly("/Date(1411432200000+1200)/");
        })
 
        it("Check end time", function() {
-           openHome.endTime.should.be.exactly("/Date(1411433100000+1200)/");
+           openHome.visitTimeList[0].endTime.should.be.exactly("/Date(1411433100000+1200)/");
 
        })
    })

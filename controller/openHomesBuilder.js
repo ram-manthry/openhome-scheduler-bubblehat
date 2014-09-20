@@ -8,7 +8,7 @@ exports.getOpenHomes = function (watchListItems) {
     for(i = 0; i < watchListItems.length; i++) {
 
         console.log("this is an openHome: " + watchListItems[i]);
-        var openHome = watchListItems[i].OpenHomes;
+        var openHomes = watchListItems[i].OpenHomes;
 
         var attributes = watchListItems[i].Attributes;
 
@@ -23,9 +23,18 @@ exports.getOpenHomes = function (watchListItems) {
             }
         }
 
-        var OpenHome = require('../models/openHome.js');
-        var openHomeModelInstance = new OpenHome(title, location, openHome.Start, openHome.End);
+        var k;
 
+        var visitTimeList = [];
+
+        for (k=0; k< openHomes.length;k ++) {
+            var OpenHome = require('../models/openHome.js');
+            var VisitTime = require('../models/visitTime.js');
+            var VisitTimeInstance = new VisitTime(openHomes[k].Start, openHomes[k].End);
+            visitTimeList.push(VisitTimeInstance);
+            
+        }
+        var openHomeModelInstance = new OpenHome(title, location, visitTimeList);
         openHomeList.push(openHomeModelInstance);
     }
 
