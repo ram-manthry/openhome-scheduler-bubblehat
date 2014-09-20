@@ -5,10 +5,8 @@ var moment = require('moment');
 
 exports.format = function(unformattedDateTime) {
     var wholeDateTime = new Date(moment(unformattedDateTime));
-    var date = wholeDateTime.getDate();
-    var day = wholeDateTime.getDay();
-    var month = wholeDateTime.getMonth();
-    var time = wholeDateTime.getTime();
-    //return day + " " + date + " " + month + " " + time;
-    return wholeDateTime;
+
+    var formattedDate = wholeDateTime.toDateString();
+    var formattedTime = wholeDateTime.toTimeString().substring(0, wholeDateTime.toTimeString().indexOf(" GMT"));
+    return formattedDate + " " + formattedTime;
 };

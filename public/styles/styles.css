@@ -1,4 +1,4 @@
-html, 
+html,
 body,
 #wrapper,
 .map,
@@ -50,6 +50,25 @@ button:focus {
 	outline: none;
 }
 
+
+
+.Location{
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+
+
+}
+
+.Time{
+    font-size: 13px;
+    color: #012695;
+}
+
+.sidebar-brand{
+    font-weight: bold;
+
+}
 
 
 

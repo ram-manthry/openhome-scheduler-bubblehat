@@ -23,6 +23,9 @@ exports.getOpenHomes = function (watchListItems) {
             }
         }
 
+
+        var geolocation = watchListItems[i].GeographicLocation.Latitude+","+watchListItems[i].GeographicLocation.Longitude;
+        
         var k;
 
         var visitTimeList = [];
@@ -34,7 +37,7 @@ exports.getOpenHomes = function (watchListItems) {
             visitTimeList.push(VisitTimeInstance);
             
         }
-        var openHomeModelInstance = new OpenHome(title, location, visitTimeList);
+        var openHomeModelInstance = new OpenHome(title, location, visitTimeList, geolocation);
         openHomeList.push(openHomeModelInstance);
     }
 

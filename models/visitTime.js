@@ -1,5 +1,4 @@
 var DateTimeFormatter = require('../util/DateTimeFormatter.js');
-
 var VisitTime = function (startTime, endTime) {
 	var k = {};
 	k.startTime = DateTimeFormatter.format(startTime);
