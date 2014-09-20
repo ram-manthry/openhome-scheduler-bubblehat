@@ -25,14 +25,17 @@ exports.getOpenHomes = function (watchListItems) {
 
         var k;
 
+        var visitTimeList = [];
+
         for (k=0; k< openHomes.length;k ++) {
             var OpenHome = require('../models/openHome.js');
-            var openHomeModelInstance = new OpenHome(title, location, openHomes[k].Start, openHomes[k].End);
-
-            openHomeList.push(openHomeModelInstance);
+            var VisitTime = require('../models/visitTime.js');
+            var VisitTimeInstance = new VisitTime(openHomes[k].Start, openHomes[k].End);
+            visitTimeList.push(VisitTimeInstance);
+            
         }
-
-        
+        var openHomeModelInstance = new OpenHome(title, location, visitTimeList);
+        openHomeList.push(openHomeModelInstance);
     }
 
     return openHomeList;
