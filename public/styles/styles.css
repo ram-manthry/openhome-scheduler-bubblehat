@@ -1,7 +1,4 @@
-
-
-
-html, 
+html,
 body,
 #wrapper,
 .map,
@@ -72,8 +69,6 @@ button:focus {
     font-weight: bold;
 
 }
-li {
-    list-style-type: none;
-}
+
 
 
