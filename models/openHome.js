@@ -6,4 +6,4 @@ var OpenHome = function (suburb, startTime, endTime) {
 	return o;
 };
 
-modules.exports = OpenHome;
+module.exports = OpenHome;
