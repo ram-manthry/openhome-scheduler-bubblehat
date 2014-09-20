@@ -1,21 +1,18 @@
-
-    <!--<h1>Open Home Schedule</h1>!-->
+ <!--<h1>Open Home Schedule</h1>!-->
     <div id="wrapper">
         <div id="sidebar-wrapper">
 
             <img src="img/trademe_logo.png" alt="TradeMe Open Home Scheduler" class="logo">
 
             <div class="sidebar-search">
-                <!-- <p>Start: </p>
+                <p>Start: </p>
                 <select id="start" onchange="calcRoute();">
                     <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
                     <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
                     <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
                 </select>
 
-                <p>or </p> 
-
-                <button onclick="getLocation();">Use My Location</button><br><br> -->
+                <p>or </p> <button onclick="getLocation();">Use My Location</button><br><br>
 
                 <p>End: </p>
                 <select id="end" onchange="calcRoute();">
@@ -37,7 +34,12 @@
                 </li>
 
                 {{#each watchlist}}
-                    <li class="sidebar-brand">{{Title}}</li>
+                    <li class="sidebar-brand">{{title}}</li>
+                    <li class="sidebar-brand">{{location}}</li>
+
+                    {{#each visitTimeList}}
+                    <li class="sidebar-brand">{{startTime}}</li>
+                    {{/each}}
                 {{/each}}
             </ul>
 
@@ -49,6 +51,3 @@
             <div id="map-canvas"></div>
         </div>
     </div>
-
-
-
