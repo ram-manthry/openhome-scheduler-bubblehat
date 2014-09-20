@@ -1,34 +1,52 @@
-<div>
+
     <!--<h1>Open Home Schedule</h1>!-->
     <div id="wrapper">
         <div id="sidebar-wrapper">
 
-            <ul class="sidebar-nav">
+            <img src="img/trademe_logo.png" alt="TradeMe Open Home Scheduler" class="logo">
 
+            <div class="sidebar-search">
+                <p>Start: </p>
+                <select id="start" onchange="calcRoute();">
+                    <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
+                    <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
+                    <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
+                </select>
+
+                <p>or </p> <button onclick="getLocation();">Use My Location</button><br><br>
+
+                <p>End: </p>
+                <select id="end" onchange="calcRoute();">
+                    <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
+                    <option value="308 Parnell Rd Parnell">308 Parnell Rd Parnell</option>
+                    <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
+                </select>
+
+                <p id="msg"></p>
+
+            </div>
+
+
+            <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="http://trademe.co.nz">
                        TradeMe
-                    </a>
-                </li>
-                <li class="sidebar-brand">
-                    <a href="directions-test.html">
-                        Google directions test
                     </a>
                 </li>
 
                 {{#each watchlist}}
                     <li class="sidebar-brand">{{Title}}</li>
                 {{/each}}
-
-
             </ul>
 
-
         </div>
-        <div>
+
+        <div class="map">
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">&#9776</a>
+
+            <div id="map-canvas"></div>
         </div>
     </div>
-</div>
+
 
 
