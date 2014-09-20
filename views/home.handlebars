@@ -4,7 +4,7 @@
 
             <img src="img/trademe_logo.png" alt="TradeMe Open Home Scheduler" class="logo">
 
-            <div class="sidebar-search">
+            <!-- <div class="sidebar-search">
                 <p>Start: </p>
                 <select id="start" onchange="calcRoute();">
                     <option value="2 Quadrant Rd Onehunga">2 Quadrant Rd Onehunga</option>
@@ -23,19 +23,21 @@
 
                 <p id="msg"></p>
 
-            </div>
+            </div> -->
 
 
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
+<!--                 <li class="sidebar-brand">
                     <a href="http://trademe.co.nz">
                        TradeMe
                     </a>
-                </li>
+                </li> -->
 
                 {{#each watchlist}}
                     <li class="sidebar-brand">{{title}}</li>
-                    <li class="sidebar-brand" id="location">{{location}}</li>
+                    <li class="sidebar-brand" id="location">{{location}}
+                    <span style="display:none;" id="geolocation">{{geolocation}}</span>
+                    </li>
 
                     {{#each visitTimeList}}
                     <li class="sidebar-brand">{{startTime}}</li>
