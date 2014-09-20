@@ -1,8 +1,9 @@
-var moment = require('moment');
+var DateTimeFormatter = require('../util/DateTimeFormatter.js');
+
 var VisitTime = function (startTime, endTime) {
 	var k = {};
-	k.startTime = new Date(moment(startTime));
-	k.endTime = new Date(moment(endTime));
+	k.startTime = DateTimeFormatter.format(startTime);
+	k.endTime = DateTimeFormatter.format(endTime);
 
 	return k;
 };
