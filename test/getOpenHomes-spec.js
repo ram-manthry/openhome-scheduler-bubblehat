@@ -29,3 +29,7 @@ describe("Retrieve Open Homes", function() {
        })
    })
 });
+
+describe("Display times of locations", function() {
+    describe("")
+})

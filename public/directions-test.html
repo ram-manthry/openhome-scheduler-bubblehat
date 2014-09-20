@@ -34,7 +34,11 @@
         <option value="13 Patterson st Sandringham">13 Patterson st Sandringham</option>
     </select>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <b>or </b> <button onclick="getLocation();">Use My Location</button><br><br>
+=======
+    <b>Or </b> <button onclick="getLocation();">Get My Location</button>
+>>>>>>> FETCH_HEAD
 =======
     <b>Or </b> <button onclick="getLocation();">Get My Location</button>
 >>>>>>> FETCH_HEAD
@@ -47,7 +51,11 @@
     </select>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     <p id="msg"></p>
+=======
+    <p id="msg">Click the button to get your coordinates:</p>
+>>>>>>> FETCH_HEAD
 =======
     <p id="msg">Click the button to get your coordinates:</p>
 >>>>>>> FETCH_HEAD
@@ -73,14 +81,20 @@
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(calcRouteMyLocation, showError);
 =======
+=======
+>>>>>>> FETCH_HEAD
 
         function getLocation() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(showPosition);
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
             } else { 
                 x.innerHTML = "Geolocation is not supported by this browser.";
@@ -88,12 +102,18 @@
         }
         
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> FETCH_HEAD
         function showPosition(position) {
             x.innerHTML="Latitude: " + position.coords.latitude + 
             "<br>Longitude: " + position.coords.longitude;  
         }
         
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
 >>>>>>> FETCH_HEAD
         function showError(error) {
             switch(error.code) {
@@ -112,6 +132,7 @@
             }
         }
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         function calcRouteMyLocation(position) {
             var start = position.coords.latitude+","+position.coords.longitude;
@@ -133,11 +154,17 @@
 
 =======
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
         function calcRoute() {
             var start = document.getElementById('start').value;
             var end = document.getElementById('end').value;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            console.log(start);
+>>>>>>> FETCH_HEAD
 =======
             console.log(start);
 >>>>>>> FETCH_HEAD
