@@ -89,11 +89,11 @@ describe("Retrieve Open Homes", function() {
        })
 
        it("Check time", function() {
-           openHome.visitTimeList[0].startTime.should.be.exactly("/Date(1411432200000+1200)/");
+           openHome.visitTimeList[0].startTime.should.be.exactly("Tue Sep 23 2014 12:30:00");
        })
 
        it("Check end time", function() {
-           openHome.visitTimeList[0].endTime.should.be.exactly("/Date(1411433100000+1200)/");
+           openHome.visitTimeList[0].endTime.should.be.exactly("Tue Sep 23 2014 12:45:00");
 
        })
    })
